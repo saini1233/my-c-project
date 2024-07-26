@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      gcc: 9  # Specify the GCC version if needed
+    commands:
+      - echo Installing dependencies
+      # Install any necessary packages or dependencies here
+      # For example, you might need to install `make`, `cmake`, etc.
+  build:
+    commands:
+      - echo Building the application
+      - make  # Assuming you are using a Makefile
+      # Alternatively, if you're using a different build system, replace `make` with your build command
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - bin/**/*
+  discard-paths: yes
